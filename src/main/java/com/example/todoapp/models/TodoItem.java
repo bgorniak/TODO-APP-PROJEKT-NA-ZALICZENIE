@@ -18,8 +18,9 @@ public class TodoItem implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @NotBlank(message = "Description is required")
-    private String description;
+    @NotBlank(message = "Nazwa jest wymagana")
+
+    private String task;
 
     private Boolean isComplete;
 
@@ -29,8 +30,8 @@ public class TodoItem implements Serializable {
 
     @Override
     public String toString() {
-        return String.format("TodoItem{id=%d, description='%s', isComplete='%s', createdAt='%s', updatedAt='%s'}",
-                id, description, isComplete, createdAt, updatedAt);
+        return String.format("TodoItem{id=%d, task='%s', isComplete='%s', createdAt='%s', updatedAt='%s'}",
+                id, task, isComplete, createdAt, updatedAt);
     }
 
 }

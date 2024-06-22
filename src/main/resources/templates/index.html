@@ -86,7 +86,7 @@
             </div>
         </div>
         <div class="card-body">
-            <h5 class="card-title" th:text="${item.description}">Opis zadania</h5>
+            <h5 class="card-title" th:text="${item.task}">Opis zadania</h5>
             <p class="card-text todo-date">Utworzono: <span th:text="${#dates.format(item.createdAt, 'dd-MM-yyyy HH:mm:ss')}"></span></p>
             <p class="card-text todo-date">Zaktualizowano: <span th:text="${#dates.format(item.updatedAt, 'dd-MM-yyyy HH:mm:ss')}"></span></p>
             <div class="btn-group-sm" role="group">

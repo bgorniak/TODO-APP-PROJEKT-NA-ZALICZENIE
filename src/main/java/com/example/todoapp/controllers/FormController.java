@@ -24,7 +24,7 @@ public class FormController {
     public String createTodoItem(@Valid TodoItem todoItem, BindingResult result, Model model) {
 
         TodoItem item = new TodoItem();
-        item.setDescription(todoItem.getDescription());
+        item.setTask(todoItem.getTask());
         item.setIsComplete(todoItem.getIsComplete());
 
         todoService.save(todoItem);
@@ -59,7 +59,7 @@ public class FormController {
                 .orElseThrow(() -> new IllegalArgumentException("TodoItem id: " + id + " not found"));
 
         item.setIsComplete(todoItem.getIsComplete());
-        item.setDescription(todoItem.getDescription());
+        item.setTask(todoItem.getTask());
 
         todoService.save(item);
 
