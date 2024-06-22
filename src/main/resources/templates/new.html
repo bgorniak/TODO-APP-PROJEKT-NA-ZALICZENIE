@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dodaj zadanie</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.2/css/bootstrap.min.css}" />
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap-icons/1.9.1/font/bootstrap-icons.css}" />
+    <style>
+        body {
+            background-color: #eef2f7;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #212529;
+            font-weight: bold;
+        }
+
+        .form-group {
+            background: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .form-group:hover {
+            transform: translateY(-5px);
+        }
+
+        .btn-outline-success {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-outline-success:hover {
+            background-color: #218838;
+            color: white;
+        }
+
+        .bi {
+            margin-right: 5px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-2">
+            <p><a class="btn btn-outline-success" href="/">
+                <i class="bi bi-arrow-left-square-fill"></i> Cofnij</a>
+            </p>
+        </div>
+        <div class="col-6">
+            <h2>Dodaj zadanie</h2>
+            <form action="#" th:action="@{/todo}" th:object="${todoItem}" method="POST">
+                <div class="form-group">
+                    <label for="description" class="form-label">Nazwa zadania</label>
+                    <input class="form-control"
+                           type="text"
+                           th:field="*{description}"
+                           id="description"
+                           placeholder="Wpisz nazwę zadania"
+                    >
+                    <br>
+                    <button type="submit" class="btn btn-outline-success">
+                        <i class="bi bi-plus-square-fill"></i> Dodaj
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script th:src="@{/webjars/bootstrap/5.2.2/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>
